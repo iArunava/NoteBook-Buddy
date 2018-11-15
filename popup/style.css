@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css?family=Anonymous+Pro');
+
+/*
+Light Orange  -> #FFA726 | (225, 167, 38)
+Orange -> #FF9800
+*/
+
+* {
+  font-family: 'MyWebFont', monospace;
+  font-size: 20px;
+  transition: 0.3s ease;
+}
+
+.class--title {
+    font-size: 40px;
+}
+
+.height--50 {
+    max-height: 50% !important;
+}
+
+.text--center {
+    text-align: center;
+}
+
+.class--inline {
+    float: left;
+}
+
+.margin--bottom-0 {
+    margin-bottom: 0px !important;
+}
+
+.margin--top-10 {
+    margin-top: 10px;
+}
+
+.checkbox--margin {
+    margin-right: 5px;
+}
+
+.margin--20 {
+    margin: 20px;
+}
+
+.center--btn,
+.center--content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+
