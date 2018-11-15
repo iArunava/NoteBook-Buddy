@@ -4,21 +4,6 @@ const FF = 'firefox';
 $(document).ready(() => {
 	console.log('ready');
 	brwsr = navigator.sayswho.split(" ")[0].toLowerCase();
-})
-
-$('#btn--colab').on('click', () => {
-	console.log('sdsd');
-	if (brwsr === FF) {
-		mod_url = webNavigation.getFrame();
-		mod_url.then((info) => {
-			console.log(info);
-		})
-		//window.location.href(mod_url);
-	}
-});
-
-$('#btn--nbviewer').on('click', () => {
-	console.log('nbviewer');
 });
 
 /* https://stackoverflow.com/questions/5916900/how-can-you-detect-the-version-of-a-browser */

@@ -25,5 +25,12 @@
 		"default_icon": "./icons/nbuddy-24.png",
 		"default_title": "NoteBook Buddy",
 		"default_popup": "./popup/nbuddy_popup.html"
-	}
+	},
+
+	"content_scripts": [
+		{
+			"matches": ["*://*.github.com/*"],
+			"js": ["./dependencies/jquery.js", "./content_scripts/nbuddy.js"]
+		}
+	]
 }
