@@ -5,7 +5,8 @@ let open_in;
 const FF = 'firefox';
 const COLAB_URL = 'https://colab.research.google.com';
 const NBVIEWER_URL = 'https://nbviewer.jupyter.org';
-const GITHUB_URL = '/github'
+const GITHUB_URL = 'https://github.com'
+const SLASH_GITHUB = '/github'
 
 $(document).ready(() => {
 	console.log('ready');
@@ -20,6 +21,11 @@ $('#btn--colab').on('click', () => {
 
 $('#btn--nbviewer').on('click', () => {
     open_in = NBVIEWER_URL;
+    query_curr_tab();
+});
+
+$('#btn--github').on('click', () => {
+    open_in = GITHUB_URL;
     query_curr_tab();
 });
 
@@ -47,11 +53,18 @@ let open_required_url = (tabs) => {
 
     if (curr_tab_url.endsWith('.ipynb')) {
         let url_array = curr_tab_url.match(re_url);
-        console.log(url_array);
-        if (!url_array[2].startsWith('/github'))
-            open_in += GITHUB_URL;
-        new_url = curr_tab_url.replace(re_url, open_in+'$2');
+
+        let has_slash_github = url_array[2].startsWith('/github');
+        if (!has_slash_github && open_in !== GITHUB_URL)
+            open_in += SLASH_GITHUB;
+        else if (open_in === GITHUB_URL && has_slash_github) {
+            url_array[2] = url_array[2].substring(7);
+        }
+
+        new_url = open_in + url_array[2];
+
         get_main().tabs.create({url: new_url});
+
     } else {
         alert('Not a Github Hosted NoteBook');
     }
