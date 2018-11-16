@@ -1,3 +1,9 @@
+<p align="center">
+  <a href="#">
+  <img src="https://user-images.githubusercontent.com/26242097/48593229-e78aa700-e971-11e8-9f9c-ddfd7d04ca59.png" alt="nbuddy Logo" width="256" height="256" />
+  </a>
+</p>
+
 # NoteBook Buddy
 NoteBook Buddy is a Chrome and Firefox Extension that provides a helping hand while using jupyter notebooks
 
