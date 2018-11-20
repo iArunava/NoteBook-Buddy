@@ -7,6 +7,8 @@ const COLAB_URL = 'https://colab.research.google.com';
 const NBVIEWER_URL = 'https://nbviewer.jupyter.org';
 const GITHUB_URL = 'https://github.com'
 const SLASH_GITHUB = '/github'
+const PY2NEWCOLAB = 'https://colab.research.google.com/notebook#create=true&language=python2';
+const PY3NEWCOLAB = 'https://colab.research.google.com/notebook#create=true&language=python3';
 
 $(document).ready(() => {
 	console.log('ready');
@@ -27,6 +29,14 @@ $('#btn--nbviewer').on('click', () => {
 $('#btn--github').on('click', () => {
     open_in = GITHUB_URL;
     query_curr_tab();
+});
+
+$('#id--new-colab-nb-py2').on('click', () => {
+    get_main().tabs.create({url: PY2NEWCOLAB});
+});
+
+$('#id--new-colab-nb-py3').on('click', () => {
+    get_main().tabs.create({url: PY3NEWCOLAB});
 });
 
 let query_curr_tab = () => {
